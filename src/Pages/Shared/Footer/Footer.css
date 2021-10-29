@@ -1,0 +1,15 @@
+.default-color{
+    color:#dc834e;
+}
+.footer-right-sec{
+
+}
+
+.footer-right-sec a{
+    text-decoration: none;
+    margin-right: 10px;
+    color: white;
+}
+.footer-right-sec a:hover{
+    color:#dc834e;
+}

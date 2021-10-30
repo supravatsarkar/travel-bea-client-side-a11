@@ -9,11 +9,11 @@ import { useHistory, useLocation } from 'react-router';
 
 const Login = () => {
 
-
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => console.log(data);
     const { signInUsingGoogle, error, setError } = useAuth();
 
+    // AFTER LOGIN REDIRECT 
     const location = useLocation();
     console.log('location', location);
     const redirect_url = location?.state?.from || '/';

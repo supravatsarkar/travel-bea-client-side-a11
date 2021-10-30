@@ -7,8 +7,8 @@ import NotFound from './Pages/NotFound/NotFound';
 import Footer from './Pages/Shared/Footer/Footer';
 import Header from './Pages/Shared/Header/Header';
 import Login from './Pages/Login/Login/Login';
-import SignIn from './Pages/Login/SignIn/SignIn';
 import AuthProvider from './AuthProvider/AuthProvider';
+import PrivateRoute from './Pages/Shared/PrivateRoute/PrivateRoute';
 
 
 function App() {
@@ -25,12 +25,11 @@ function App() {
               <Route path="/home">
                 <Home></Home>
               </Route>
-              <Route path="/booking/:serviceId">
+              <PrivateRoute path="/booking/:serviceId">
                 <BookService></BookService>
-              </Route>
+              </PrivateRoute>
               <Route path="/login">
                 <Login></Login>
-                {/* <SignIn></SignIn> */}
               </Route>
               <Route path="*">
                 <NotFound></NotFound>

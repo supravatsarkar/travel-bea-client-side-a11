@@ -1,7 +1,9 @@
 .App {
   text-align: center;
 }
-
+body{
+  margin-top: 55px; 
+}
 .custom-orange{
   color:#dc834e;
 }

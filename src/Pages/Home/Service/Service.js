@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, Button, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Service = ({ service }) => {
     const { _id, img, name, duration, location } = service;
@@ -11,11 +12,9 @@ const Service = ({ service }) => {
                     <Card.Img className="img-fluid" variant="top" src={img} />
                     <Card.Body>
                         <Card.Title>{name}</Card.Title>
-                        <Card.Text>
-                            <p>Location: {location}</p>
-                            <p>Days: {duration}</p>
-                        </Card.Text>
-                        <Button variant="primary">Book Now</Button>
+                        <Card.Text>Location: {location}</Card.Text>
+                        <Card.Text>Days: {duration}</Card.Text>
+                        <Button as={Link} to={`/booking/${_id}`} variant="primary">Book Now</Button>
                     </Card.Body>
                 </Card>
             </Col>

@@ -3,11 +3,12 @@
 
 }
 
-.footer-right-sec a{
+.footer-right-sec span{
     text-decoration: none;
     margin-right: 10px;
     color: white;
 }
-.footer-right-sec a:hover{
+.footer-right-sec span:hover{
     color:#dc834e;
+    cursor: pointer;
 }

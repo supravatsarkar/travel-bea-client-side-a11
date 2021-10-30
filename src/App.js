@@ -6,7 +6,8 @@ import Home from './Pages/Home/Home/Home';
 import NotFound from './Pages/NotFound/NotFound';
 import Footer from './Pages/Shared/Footer/Footer';
 import Header from './Pages/Shared/Header/Header';
-import Login from './Pages/Login/Login';
+import Login from './Pages/Login/Login/Login';
+import SignIn from './Pages/Login/SignIn/SignIn';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             </Route>
             <Route path="/login">
               <Login></Login>
+              {/* <SignIn></SignIn> */}
             </Route>
             <Route path="*">
               <NotFound></NotFound>

@@ -1,8 +1,12 @@
+import { Badge, Button } from 'react-bootstrap';
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
+import useFirebase from '../../../Hooks/useFirebase';
 
 const Header = () => {
+    const { user, logOut } = useFirebase();
+    console.log(user);
     return (
         <div>
             <Navbar fixed="top" bg="light" expand="lg" className="shadow">
@@ -17,7 +21,13 @@ const Header = () => {
 
                         </Nav>
                         <Nav className="ms-auto">
-                            <Nav.Link as={NavLink} to="/login">Login</Nav.Link>
+                            {
+                                user.email ? <div className="d-flex flex-column justify-content-center align-items-center">
+                                    <Badge className="mb-1" bg="success">{user.displayName}</Badge>
+                                    <Button size="sm" onClick={logOut} variant="danger">Log Out</Button>
+                                </div>
+                                    : <Nav.Link as={NavLink} to="/login">Login</Nav.Link>
+                            }
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

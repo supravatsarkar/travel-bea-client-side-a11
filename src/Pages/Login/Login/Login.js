@@ -4,7 +4,7 @@ import { Button } from 'react-bootstrap';
 import React from 'react';
 import { useForm } from "react-hook-form";
 import './Login.css';
-import useFirebase from '../../Hooks/useFirebase.js';
+import useFirebase from '../../../Hooks/useFirebase.js';
 
 
 const Login = () => {
@@ -19,9 +19,8 @@ const Login = () => {
             <h1 className="mb-5">Login</h1>
             {/* Login Using Google  */}
             <h5 className="custom-orange">Login with Google</h5>
-            <p className="text-danger">{error}</p>
             <Button onClick={signInUsingGoogle} variant="outline-secondary"><FontAwesomeIcon className="fs-3 custom-orange" icon={faGoogle} />oogle</Button>
-            {/* <div className="btn btn-outline"></div> */}
+            <p className="text-danger">{error}</p>
 
             {/* Login Using email id and password */}
             <h5 className="custom-orange my-2">Login with Email & Password</h5>
@@ -31,10 +30,6 @@ const Login = () => {
                 {errors.exampleRequired && <span>This field is required</span>}
                 <input type="submit" value="Login" disabled />
             </form>
-
-            {
-                user.email && <Button onClick={logOut} variant="danger">Log Out</Button>
-            }
         </div>
     );
 };

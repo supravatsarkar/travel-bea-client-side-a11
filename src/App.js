@@ -8,35 +8,38 @@ import Footer from './Pages/Shared/Footer/Footer';
 import Header from './Pages/Shared/Header/Header';
 import Login from './Pages/Login/Login/Login';
 import SignIn from './Pages/Login/SignIn/SignIn';
+import AuthProvider from './AuthProvider/AuthProvider';
+
 
 function App() {
   return (
     <div className="App">
-      <Router>
-        <div className="min-vh-100"> {/*For min hight of blank page  */}
-          <Header></Header>
-          <Switch>
-            <Route exact path="/">
-              <Home></Home>
-            </Route>
-            <Route path="/home">
-              <Home></Home>
-            </Route>
-            <Route path="/booking/:serviceId">
-              <BookService></BookService>
-            </Route>
-            <Route path="/login">
-              <Login></Login>
-              {/* <SignIn></SignIn> */}
-            </Route>
-            <Route path="*">
-              <NotFound></NotFound>
-            </Route>
-          </Switch>
-        </div>
-        <Footer></Footer>
-      </Router>
-
+      <AuthProvider>
+        <Router>
+          <div className="min-vh-100"> {/*For min hight of blank page  */}
+            <Header></Header>
+            <Switch>
+              <Route exact path="/">
+                <Home></Home>
+              </Route>
+              <Route path="/home">
+                <Home></Home>
+              </Route>
+              <Route path="/booking/:serviceId">
+                <BookService></BookService>
+              </Route>
+              <Route path="/login">
+                <Login></Login>
+                {/* <SignIn></SignIn> */}
+              </Route>
+              <Route path="*">
+                <NotFound></NotFound>
+              </Route>
+            </Switch>
+          </div>
+          <Footer></Footer>
+        </Router>
+      </AuthProvider>
     </div>
   );
 }

@@ -4,15 +4,13 @@ import { Button } from 'react-bootstrap';
 import React from 'react';
 import { useForm } from "react-hook-form";
 import './Login.css';
-import useFirebase from '../../../Hooks/useFirebase.js';
-
+import useAuth from '../../../Hooks/useAuth';
 
 const Login = () => {
 
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => console.log(data);
-
-    const { signInUsingGoogle, logOut, error, user } = useFirebase();
+    const { signInUsingGoogle, error } = useAuth();
 
     return (
         <div className="d-flex flex-column justify-content-center align-items-center">

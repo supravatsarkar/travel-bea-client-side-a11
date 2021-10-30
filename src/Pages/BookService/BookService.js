@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
 import { useParams } from 'react-router';
 
 const BookService = () => {
@@ -14,18 +15,30 @@ const BookService = () => {
             });
     }, [])
     return (
-        <div>
-            <h2>Book Service</h2>
-            <p>id: {serviceId}</p>
-            <h2>{name}</h2>
-            <img src={img} alt="" />
-            <h5>{location}</h5>
-            <p>Days: {duration}</p>
-            <p>Seat: {seat}</p>
-            <p>Season: {Season}</p>
-            <p>From: {price}</p>
-            <p>{description}</p>
+        <div className="">
+            <Container>
+                <Row>
+                    <Col md={8}>
+                        <div>
+                            <p>id: {serviceId}</p>
+                            <h2>{name}</h2>
+                            <img className="img-fluid" src={img} alt="" />
+                            <h5>{location}</h5>
+                            <p>Days: {duration}</p>
+                            <p>Seat: {seat}</p>
+                            <p>Season: {Season}</p>
+                            <p>From: {price}</p>
+                            <p>{description}</p>
+                        </div>
 
+                    </Col>
+                    <Col md={4}>
+                        <div>
+                            <h2>Book Your Tour Now</h2>
+                        </div>
+                    </Col>
+                </Row>
+            </Container>
         </div>
     );
 };

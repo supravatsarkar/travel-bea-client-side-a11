@@ -6,6 +6,7 @@ import Home from './Pages/Home/Home/Home';
 import NotFound from './Pages/NotFound/NotFound';
 import Footer from './Pages/Shared/Footer/Footer';
 import Header from './Pages/Shared/Header/Header';
+import Login from './Pages/Login/Login';
 
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
             </Route>
             <Route path="/booking/:serviceId">
               <BookService></BookService>
+            </Route>
+            <Route path="/login">
+              <Login></Login>
             </Route>
             <Route path="*">
               <NotFound></NotFound>

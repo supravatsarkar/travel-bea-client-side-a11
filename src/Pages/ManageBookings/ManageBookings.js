@@ -7,7 +7,7 @@ const ManageBookings = () => {
     const [load, setLoad] = useState(false);
     const [status, setStatus] = useState(false);
     useEffect(() => {
-        fetch('http://localhost:5000/managebooking')
+        fetch('https://haunted-spider-93789.herokuapp.com/managebooking')
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -18,7 +18,7 @@ const ManageBookings = () => {
 
     const handleDelete = (id) => {
         if (window.confirm("Are you sure? Delete this?")) {
-            fetch(`http://localhost:5000/managebooking/${id}`, {
+            fetch(`https://haunted-spider-93789.herokuapp.com/managebooking/${id}`, {
                 method: "DELETE"
             })
                 .then(res => res.json())
@@ -34,7 +34,7 @@ const ManageBookings = () => {
 
     const handleStatus = (id) => {
         const status = 'Approved';
-        fetch(`http://localhost:5000/managebooking/updatestatus/${id}`, {
+        fetch(`https://haunted-spider-93789.herokuapp.com/managebooking/updatestatus/${id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"

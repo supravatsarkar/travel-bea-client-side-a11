@@ -6,7 +6,7 @@ const AddService = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
         // console.log(data);
-        fetch('http://localhost:5000/addservice', {
+        fetch('https://haunted-spider-93789.herokuapp.com/addservice', {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'

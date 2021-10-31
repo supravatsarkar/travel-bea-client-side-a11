@@ -12,7 +12,7 @@ const MyBookings = () => {
 
     useEffect(() => {
         const userEmail = user.email;
-        fetch(`http://localhost:5000/bookings/${userEmail}`)
+        fetch(`https://haunted-spider-93789.herokuapp.com/bookings/${userEmail}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -22,7 +22,7 @@ const MyBookings = () => {
     }, [load])
     const handleDelete = id => {
         if (window.confirm("Are you sure? Delete this?")) {
-            fetch(`http://localhost:5000/bookings/${id}`, {
+            fetch(`https://haunted-spider-93789.herokuapp.com/bookings/${id}`, {
                 method: "DELETE"
             })
                 .then(res => res.json())

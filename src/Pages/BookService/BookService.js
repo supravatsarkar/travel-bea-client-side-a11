@@ -19,7 +19,7 @@ const BookService = () => {
         // const bookingData = { ...data, userEmail, totalPrice, status };
         const userOrder = { ...data, service, userEmail, totalPrice, status };
         console.log(userOrder);
-        fetch('http://localhost:5000/booking', {
+        fetch('https://haunted-spider-93789.herokuapp.com/booking', {
             method: "POST",
             headers: {
                 "content-type": "application/json"
@@ -37,7 +37,7 @@ const BookService = () => {
     // console.log(watch("example")); // watch input value by passing the name of it
     useEffect(() => {
 
-        fetch(`http://localhost:5000/booking/${serviceId}`)
+        fetch(`https://haunted-spider-93789.herokuapp.com/booking/${serviceId}`)
             .then(res => res.json())
             .then(data => {
                 // console.log(data)

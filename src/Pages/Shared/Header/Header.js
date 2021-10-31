@@ -12,7 +12,7 @@ const Header = () => {
         <div>
             <Navbar fixed="top" bg="light" expand="lg" className="shadow">
                 <Container>
-                    <Navbar.Brand href="#home">TravelBea</Navbar.Brand>
+                    <Navbar.Brand as={NavLink} to="/home" className="fs-2 fw-bolder custom-orange">TravelBea</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">

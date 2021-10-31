@@ -36,6 +36,7 @@ const BookService = () => {
 
     // console.log(watch("example")); // watch input value by passing the name of it
     useEffect(() => {
+
         fetch(`http://localhost:5000/booking/${serviceId}`)
             .then(res => res.json())
             .then(data => {

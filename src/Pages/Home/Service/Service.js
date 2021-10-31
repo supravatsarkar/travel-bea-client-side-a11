@@ -14,7 +14,7 @@ const Service = ({ service }) => {
                         <Card.Title>{name}</Card.Title>
                         <Card.Text>Location: {location}</Card.Text>
                         <Card.Text>Days: {duration}</Card.Text>
-                        <Button as={Link} to={`/booking/${_id}`} variant="primary">Book Now</Button>
+                        <Button as={Link} to={`/booking/${_id}`} variant="warning">Book Now</Button>
                     </Card.Body>
                 </Card>
             </Col>

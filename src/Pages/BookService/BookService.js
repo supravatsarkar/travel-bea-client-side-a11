@@ -48,16 +48,18 @@ const BookService = () => {
                             <h3>Book This Tour Now</h3>
                             <Badge className="mb-1 " bg="success">{name}</Badge>
                             <form onSubmit={handleSubmit(onSubmit)}>
-                                <input defaultValue={user?.email} {...register("email")} type="email" />
+                                <input defaultValue={user?.email} {...register("email")} type="email" disabled />
                                 <input defaultValue={user?.displayName} {...register("name", { required: true })} type="text" />
-                                <input defaultValue="" {...register("date", { required: true })} type="date" />
-                                <Form.Select size="sm" {...register("seat")}>
+                                <label htmlFor="date">Date:</label>
+                                <input defaultValue="" {...register("date", { required: true })} type="date" id="date" />
+                                <label htmlFor="seat">Seat:</label>
+                                <select id="seat"  {...register("seat", { required: true })}>
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
                                     <option>4</option>
                                     <option>5</option>
-                                </Form.Select>
+                                </select>
                                 {/* errors will return when field validation fails  */}
                                 {errors.exampleRequired && <span>This field is required</span>}
 

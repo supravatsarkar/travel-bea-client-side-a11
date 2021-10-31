@@ -14,9 +14,9 @@ const BookService = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = data => {
         const userEmail = user.email;
-        const initialStatus = 'pending';
+        const status = 'Pending';
         const totalPrice = quantity * price;
-        const bookingData = { ...data, userEmail, totalPrice, initialStatus };
+        const bookingData = { ...data, userEmail, totalPrice, status };
         const userOrder = { service, bookingData };
         console.log(userOrder);
         fetch('http://localhost:5000/booking', {

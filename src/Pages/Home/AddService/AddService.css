@@ -1,0 +1,6 @@
+form input, textarea{
+    width: 50%;
+    margin: 10px;
+    border-radius: 7px;
+    border: 1px solid gray;
+}

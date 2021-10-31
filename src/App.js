@@ -10,6 +10,7 @@ import Login from './Pages/Login/Login/Login';
 import AuthProvider from './AuthProvider/AuthProvider';
 import PrivateRoute from './Pages/Shared/PrivateRoute/PrivateRoute';
 import AddService from './Pages/Home/AddService/AddService';
+import MyBooking from './Pages/MyBooking/MyBooking';
 
 
 function App() {
@@ -31,6 +32,9 @@ function App() {
               </PrivateRoute>
               <PrivateRoute path="/addservice">
                 <AddService></AddService>
+              </PrivateRoute>
+              <PrivateRoute path="/mybooking">
+                <MyBooking></MyBooking>
               </PrivateRoute>
               <Route path="/login">
                 <Login></Login>

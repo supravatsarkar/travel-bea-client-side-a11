@@ -35,7 +35,7 @@ const AddService = () => {
                 {/* errors will return when field validation fails  */}
                 {errors.exampleRequired && <span>This field is required</span>}
 
-                <input className="btn btn-warning" type="submit" value="Add Service" />
+                <input className="btn btn-warning fw-bolder" type="submit" value="Add Service" />
             </form>
         </div>
     );

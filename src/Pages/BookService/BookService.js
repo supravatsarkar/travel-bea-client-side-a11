@@ -7,22 +7,47 @@ import useAuth from '../../Hooks/useAuth';
 const BookService = () => {
     const [service, setService] = useState({});
     const { serviceId } = useParams();
+    const [quantity, setQuantity] = useState(1);
     const { _id, img, name, duration, location, description, seat, Season, price } = service;
-
     const { user } = useAuth();
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => {
+        const userEmail = user.email;
+        const initialStatus = 'pending';
+        const totalPrice = quantity * price;
+        const bookingData = { ...data, userEmail, totalPrice, initialStatus };
+        const userOrder = { service, bookingData };
+        console.log(userOrder);
+        fetch('http://localhost:5000/booking', {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(userOrder)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    alert('wow~~~ Booking Successful');
+                }
+            });
+    };
 
     // console.log(watch("example")); // watch input value by passing the name of it
     useEffect(() => {
         fetch(`http://localhost:5000/booking/${serviceId}`)
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 setService(data)
             });
     }, [])
+
+    const handleTotalPrice = (e) => {
+        // console.log('Change');
+        setQuantity(e.target.value);
+    }
 
 
     return (
@@ -37,7 +62,7 @@ const BookService = () => {
                             <p>Days: {duration}</p>
                             <p>Seat: {seat}</p>
                             <p>Season: {Season}</p>
-                            <p>From: {price}</p>
+                            <p>From: ${price}</p>
                             <p>{description}</p>
                             <p>id: {serviceId}</p>
                         </div>
@@ -47,13 +72,16 @@ const BookService = () => {
                         <div>
                             <h3>Book This Tour Now</h3>
                             <Badge className="mb-1 " bg="success">{name}</Badge>
+                            <br />
+
+
                             <form onSubmit={handleSubmit(onSubmit)}>
-                                <input defaultValue={user?.email} {...register("email")} type="email" disabled />
-                                <input defaultValue={user?.displayName} {...register("name", { required: true })} type="text" />
                                 <label htmlFor="date">Date:</label>
                                 <input defaultValue="" {...register("date", { required: true })} type="date" id="date" />
+
+                                <input defaultValue="" {...register("pickPoint", { required: true })} type="text" placeholder="Pick-Up Point" />
                                 <label htmlFor="seat">Seat:</label>
-                                <select id="seat"  {...register("seat", { required: true })}>
+                                <select {...register("seat", { required: true })} onChange={handleTotalPrice} id="seat"   >
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -62,8 +90,9 @@ const BookService = () => {
                                 </select>
                                 {/* errors will return when field validation fails  */}
                                 {errors.exampleRequired && <span>This field is required</span>}
+                                <Badge className="my-1 fs-5" bg="success" size='lg'>Total Payable: ${price * quantity}</Badge>
 
-                                <input type="submit" />
+                                <input className="btn btn-warning fw-bolder" type="submit" value="Pay & Book Now" />
                             </form>
                         </div>
                     </Col>

@@ -7,24 +7,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const SingleBook = ({ bookedService, handleDelete }) => {
     console.log(bookedService);
     const { name, img } = bookedService?.service;
-    const { price, seat, date, pickPoint, status } = bookedService?.bookingData;
+    const { price, seat, date, pickPoint, status } = bookedService;
 
-    // const handleDelete = id => {
-    //     fetch(`http://localhost:5000/bookings/${id}`, {
-    //         method: "DELETE"
-    //     })
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             // console.log(data);
-    //             const confirm = alert("Are you sure? Delete this?")
-    //             if (confirm) {
-    //                 if (data.deletedCount) {
-    //                     alert('Delete Success');
-
-    //                 }
-    //             }
-    //         })
-    // }
     return (
         <Col>
             <div className="card mb-3" >

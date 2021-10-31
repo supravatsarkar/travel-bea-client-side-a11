@@ -16,8 +16,8 @@ const BookService = () => {
         const userEmail = user.email;
         const status = 'Pending';
         const totalPrice = quantity * price;
-        const bookingData = { ...data, userEmail, totalPrice, status };
-        const userOrder = { service, bookingData };
+        // const bookingData = { ...data, userEmail, totalPrice, status };
+        const userOrder = { ...data, service, userEmail, totalPrice, status };
         console.log(userOrder);
         fetch('http://localhost:5000/booking', {
             method: "POST",
@@ -57,14 +57,15 @@ const BookService = () => {
                     <Col md={8}>
                         <div>
                             <h2>{name}</h2>
+                            <h6>Location: {location}</h6>
+                            <p>{description}</p>
                             <img className="img-fluid" src={img} alt="" />
-                            <h5>{location}</h5>
                             <p>Days: {duration}</p>
                             <p>Seat: {seat}</p>
                             <p>Season: {Season}</p>
                             <p>From: ${price}</p>
-                            <p>{description}</p>
-                            <p>id: {serviceId}</p>
+
+                            {/* <p>id: {serviceId}</p> */}
                         </div>
 
                     </Col>

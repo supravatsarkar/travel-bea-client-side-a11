@@ -22,7 +22,7 @@ const AddService = () => {
             });
     };
     return (
-        <div>
+        <div className="add-service">
             <form onSubmit={handleSubmit(onSubmit)}>
                 <input {...register("name", { required: true })} type="text" placeholder="Title Name" />
 

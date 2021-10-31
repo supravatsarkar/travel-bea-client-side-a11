@@ -2,13 +2,17 @@ import React, { useEffect, useState } from 'react';
 import { Col } from 'react-bootstrap';
 import SingleBook from '../SingleBook/SingleBook';
 import { Badge, Container, Form, Row } from 'react-bootstrap';
+import useAuth from '../../../Hooks/useAuth';
 
 const MyBookings = () => {
+    const { user } = useAuth();
     const [bookings, setBookings] = useState([]);
     const [load, setLoad] = useState(false);
 
+
     useEffect(() => {
-        fetch('http://localhost:5000/bookings')
+        const userEmail = user.email;
+        fetch(`http://localhost:5000/bookings/${userEmail}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);

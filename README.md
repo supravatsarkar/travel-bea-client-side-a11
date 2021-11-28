@@ -1,14 +1,29 @@
-# Welcome to TravelBea Web
+# Welcome to TravelBea Web Application
 ### Live site:- https://travelbea-assignment-11.web.app
 ### client side git repo:- https://github.com/supravatsarkar/travel-bea-client-side-a11
 ### server side git repo:- https://github.com/supravatsarkar/travel-bea-server-side-a11.git
 
+## TravelBea is MERN Stack web application.
+
+## Technology use:
+* React js
+* Bootstrap
+* Node JS
+* Express js (node framework)
+* No SQL Database (MongoDB)
+* Google Firebase for authentication and client-side hosting
+* Heroku for server-side hosting.
+
+### Feature of TravelBea Application:
 * TravelBea is Tour Booking Related Website
-* Here you can get two login system user, admin
-* Here you can get kind of tour, trip agency.
+* LogIn using Google with
 * Booking ticket for trip
-* After booking you can delete your booking as a user
-* 
+* view and delete bookings
+* Manage all users bookings [status change, delete]
+* Here you can get kind of tour, trip agency.
+* Private route
+
+ 
 
 # Getting Started with Create React App
 

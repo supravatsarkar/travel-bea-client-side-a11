@@ -3,7 +3,7 @@
 ### client side git repo:- https://github.com/supravatsarkar/travel-bea-client-side-a11
 ### server side git repo:- https://github.com/supravatsarkar/travel-bea-server-side-a11.git
 
-## TravelBea is MERN Stack web application.
+## TravelBea is a MERN Stack web application.
 
 ## Technology use:
 * React js
@@ -16,14 +16,14 @@
 
 ### Feature of TravelBea Application:
 * TravelBea is Tour Booking Related Website
-* LogIn using Google with
-* Booking ticket for trip
+* log in using Google with
+* Booking ticket for the trip
 * view and delete bookings
 * Manage all users bookings [status change, delete]
-* Here you can get kind of tour, trip agency.
+* Here you can get a kind of tour, a trip agency.
 * Private route
 
- 
+ ### Thanking You
 
 # Getting Started with Create React App
 
